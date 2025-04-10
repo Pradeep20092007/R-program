@@ -1,0 +1,175 @@
+prog 1:
+my.name=readline("Enter name:")
+my.age<-readline("Enter age:")
+#convert character into integer
+my.age<-as.integer(my.age)
+print(paste("Hi",my.name,"next year you will be",my.age+1,"years old."))
+
+Output:
+[1] "Hi pradeep next year you will be 18 years old."
+-------------------------------------------------------------------------------------
+prog 2:
+string1<-"R program"
+result<-nchar(string1)
+cat("total Length:",result)
+
+output:
+total Length: 9
+--------------------------------------------------------------------------------------------
+prog 3:
+recursive.factorial<-function(x){
+if(x==0) return(1)
+else     return(x*recursive.factorial(x-1))
+}
+recursive.factorial(5)
+
+output:
+[1] 120
+-----------------------------------------------------------------------------------------------
+prog 4:
+x<-10.5
+class(x)
+x= 1000
+class(x)
+x=9i+3
+class(x)
+x="R programming"
+class(x)
+x=FALSE
+class(x)
+
+
+OUTPUT:
+ x<-10.5
+> class(x)
+[1] "numeric"
+> x= 1000
+> class(x)
+[1] "numeric"
+> x=9i+3
+> class(x)
+[1] "complex"
+> x="R programming"
+> class(x)
+[1] "character"
+> x=FALSE
+> class(x)
+[1] "logical"
+> 
+----------------------------------------------------------------------------------------------------------
+prog 5:
+ num=as.integer(readline("Enter a number:"))
+for(i in 1:10){
+print(paste(num,'x',i,'=',num*i))
+}
+
+output:
+>  num=as.integer(readline("Enter a number:"))
+Enter a number:5
+> for(i in 1:10){
++ print(paste(num,'x',i,'=',num*i))
++ }
+[1] "5 x 1 = 5"
+[1] "5 x 2 = 10"
+[1] "5 x 3 = 15"
+[1] "5 x 4 = 20"
+[1] "5 x 5 = 25"
+[1] "5 x 6 = 30"
+[1] "5 x 7 = 35"
+[1] "5 x 8 = 40"
+[1] "5 x 9 = 45"
+[1] "5 x 10 = 50"
+--------------------------------------------------------------------------------------------------------------
+prog 6:
+num=as.integer(readline("Enter a number:"))
+if((num%%2)==0)
+{
+print(paste(num,"is Even"))
+}else{
+print(paste(num,"is odd"))
+}
+
+output:
+[1] "100 is Even"
+--------------------------------------------------------------------------------------------------------------------
+prog 7:
+num=as.double(readline("enter a number:"))
+if(num>0){
+print("positive number")
+}else{
+if(num==0){
+print("zero")
+}else{
+print("negative number")
+}
+}
+
+output:
+[1] "negative number"
+------------------------------------------------------------------------------------------------------------------------
+prog 8:
+lcm=function(x,y)
+{
+if(x>y)
+{
+greater=x
+}
+else{
+greater=y
+}
+while(TRUE)
+{
+if((greater%%x==0)&&(greater%%y==0))
+{
+lcm=greater
+break
+}
+greater=greater+1
+}
+return(lcm)
+}
+x=as.integer(readline(prompt="enter first number:"))
+y=as.integer(readline(prompt="enter second number:"))
+print(paste("the LCM of",x,"and",y,"is",lcm(x,y)))
+output:
+ x=as.integer(readline(prompt="enter first number:"))
+enter first number:6
+> y=as.integer(readline(prompt="enter second number:"))
+enter second number:10
+> print(paste("the LCM of",x,"and",y,"is",lcm(x,y)))
+[1] "the LCM of 6 and 10 is 30"
+> 
+----------------------------------------------------------------------------------------------------------------------
+prog 9:
+add=function(x,y){
+return(x+y)
+}
+subtract=function(x,y){
+return(x-y)
+}
+multiply=function(x,y){
+return(x*y)
+}
+divide=function(x,y)
+{
+return(x/y)
+}
+choice=as.integer(readline(prompt="enter choice[1/2/3/4]:"))
+ x=as.integer(readline(prompt="enter first number:"))
+y=as.integer(readline(prompt="enter second number:"))
+operator=switch(choice,"+","-","*","/")
+result=switch(choice,add(x,y),subtract(x,y),multiply(x,y),divide(x,y))
+print(paste(x,operator,y,"=",result))
+
+output:
+ choice=as.integer(readline(prompt="enter choice[1/2/3/4]:"))
+enter choice[1/2/3/4]:2
+>  x=as.integer(readline(prompt="enter first number:"))
+enter first number:10
+> y=as.integer(readline(prompt="enter second number:"))
+enter second number:5
+> operator=switch(choice,"+","-","*","/")
+> result=switch(choice,add(x,y),subtract(x,y),multiply(x,y),divide(x,y))
+> print(paste(x,operator,y,"=",result))
+[1] "10 - 5 = 5"
+> 
