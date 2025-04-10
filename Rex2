@@ -1,0 +1,342 @@
+prog 1:
+x=c(4,6,5,7,10,9,4,15)
+y=c(0,10,1,8,2,3,4,1)
+sum=x+y
+print(paste("sum=",sum))
+subtraction=x-y
+print(subtraction)
+product=x*y
+print(paste("product=",product))
+division=x/y
+print(division)
+comparision=x<=y
+print(comparision)
+length=length(x)
+print(paste("length of x=",length))
+
+output:
+[1] "sum= 4"  "sum= 16" "sum= 6"  "sum= 15" "sum= 12" "sum= 12" "sum= 8" 
+[8] "sum= 16"
+[1]  4 -4  4 -1  8  6  0 14
+[1] "product= 0"  "product= 60" "product= 5"  "product= 56" "product= 20"
+[6] "product= 27" "product= 16" "product= 15"
+[1]    Inf  0.600  5.000  0.875  5.000  3.000  1.000 15.000
+[1] FALSE  TRUE FALSE  TRUE FALSE FALSE  TRUE FALSE
+[1] "length of x= 8"
+--------------------------------------------------------------------------------------------------------------------
+prog 2:
+number=c(2,6,8,10,15,20,25,30)
+greater_than_2=number[number>2]
+print(greater_than_2)
+less_than_30=number[number<30]
+print(less_than_30)
+cummulative=cumsum(number)
+print(cummulative)
+
+output:
+> number=c(2,6,8,10,15,20,25,30)
+> greater_than_2=number[number>2]
+> print(greater_than_2)
+[1]  6  8 10 15 20 25 30
+> less_than_30=number[number<30]
+> print(less_than_30)
+[1]  2  6  8 10 15 20 25
+> cummulative=cumsum(number)
+> print(cummulative)
+[1]   2   8  16  26  41  61  86 116
+> 
+------------------------------------------------------------------------------------------------------------------------------
+prog 3:
+marks=c(56,65,98,41,24,31,55)
+mean_value=mean(marks)
+median_value=median(marks)
+max_value=max(marks)
+min_value=min(marks)
+sd_value=sd(marks)
+print(paste("mean",mean_value))
+print(paste("median",median_value))
+print(paste("max",max_value))
+print(paste("min",min_value))
+print(paste("standard deviation",sd_value))
+
+output:
+> print(paste("mean",mean_value))
+[1] "mean 52.8571428571429"
+> print(paste("median",median_value))
+[1] "median 55"
+> print(paste("max",max_value))
+[1] "max 98"
+> print(paste("min",min_value))
+[1] "min 24"
+> print(paste("standard deviation",sd_value))
+[1] "standard deviation 24.6673101589166"
+----------------------------------------------------------------------------------------------------------------------------------
+prog 4:
+random_number=c(56,9,45,1,27,32,33,89,99,77)
+ascending=sort(random_number)
+descending=sort(random_number,decreasing=TRUE)
+reversed=rev(random_number)
+print(paste("ascending order:"))
+print(ascending)
+print(paste("descending order:"))
+print(descending)
+print(paste("reversed number:"))
+print(reversed)
+output:
+
+ print(paste("ascending order:"))
+[1] "ascending order:"
+> print(ascending)
+ [1]  1  9 27 32 33 45 56 77 89 99
+> print(paste("descending order:"))
+[1] "descending order:"
+> print(descending)
+ [1] 99 89 77 56 45 33 32 27  9  1
+> print(paste("reversed number:"))
+[1] "reversed number:"
+> print(reversed)
+ [1] 77 99 89 33 32 27  1 45  9 56
+> 
+-------------------------------------------------------------------------------------------------------------------------------
+prog 5:
+
+X=letters[1:10]
+print(X)
+y=letters[16:24]
+print(y)
+X<y
+print(paste("type of x is",class(X)))
+print(paste("type of y is",class(y)))
+print(paste(" is X numeric",is.numeric(X)))
+print(paste(" is y numeric",is.numeric(y)))
+
+output:
+ [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j"
+> y=letters[16:24]
+> print(y)
+[1] "p" "q" "r" "s" "t" "u" "v" "w" "x"
+> X<y
+ [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+Warning message:
+In X < y : longer object length is not a multiple of shorter object length
+----------------------------------------------------------------------------------------------------------------------------------
+prog 6:
+A=matrix(c(2,0,1,3),nrow=2)
+print(paste("matrix A"))
+print(A)
+B=matrix(c(5,2,6,1),nrow=2)
+print(paste("matrix B"))
+print(B)
+combined=rbind(A<B)
+print(paste("merging two matrix row "))
+print(combined)
+combined1=cbind(A,B)
+print(paste("merging two matrix coloumn"))
+print(combined) 
+
+output
+> A=matrix(c(2,0,1,3),nrow=2)
+> print(paste("matrix A"))
+[1] "matrix A"
+> print(A)
+     [,1] [,2]
+[1,]    2    1
+[2,]    0    3
+> B=matrix(c(5,2,6,1),nrow=2)
+> print(paste("matrix B"))
+[1] "matrix B"
+> print(B)
+     [,1] [,2]
+[1,]    5    6
+[2,]    2    1
+> combined=rbind(A<B)
+> print(paste("merging two matrix row "))
+[1] "merging two matrix row "
+> print(combined)
+     [,1]  [,2]
+[1,] TRUE  TRUE
+[2,] TRUE FALSE
+-------------------------------------------------------------------------------------------------------------------------------
+prog 7:
+A=matrix(c(2,0,1,3),nrow=2)
+print(paste("matrix A"))
+print(A)
+B=matrix(c(5,2,6,1),nrow=2)
+print(paste("matrix B"))
+print(B)
+multiplication=A*B
+print(paste("matrix multiplication"))
+print(multiplication)
+transpose=t(A)
+print(paste(" transpose of matrix A "))
+print(transpose)
+inverse=solve(A)
+print(paste(" inverse of matrix A "))
+print(inverse)
+eigenvalue=eigen(A)
+print(paste("eigen value of matrix A "))
+print(eigenvalue)
+determinant=det(A)
+print(paste("determinant of matrix A "))
+print(determinant)
+
+
+
+output:
+[1] "matrix A"
+     [,1] [,2]
+[1,]    2    1
+[2,]    0    3
+[1] "matrix B"
+     [,1] [,2]
+[1,]    5    6
+[2,]    2    
+[1] "matrix multiplication"
+     [,1] [,2]
+[1,]   10    6
+[2,]    0    3
+[1] " transpose of matrix A "
+     [,1] [,2]
+[1,]    2    0
+[2,]    1    3
+[1] " inverse of matrix A "
+     [,1]       [,2]
+[1,]  0.5 -0.1666667
+[2,]  0.0  0.3333333
+[1] "eigen value of matrix A "
+$values
+[1] 3 2
+$vectors
+          [,1] [,2]
+[1,] 0.7071068    1
+[2,] 0.7071068    0
+[1] "determinant of matrix A "
+[1] 6
+> 
+-------------------------------------------------------------------------------------------------------------------
+prog 8:
+A=matrix(c(2,0,1,3),nrow=2)
+print(paste("matrix A"))
+print(A)
+B=matrix(c(5,2,4,-1),ncol=2)
+print(paste("matrix B"))
+print(B)
+addition=A+B
+print(paste("matrix additon"))
+print(addition)
+subtraction=A-B
+print(paste("matrix subtraction"))
+print(subtraction)
+a=3
+c=a*A
+print(paste("scalar multiplication matrix"))
+print(c)
+b=c(7,4)
+D=A*b
+print(paste("matrix multiplication"))
+print(D)
+
+
+output:
+[1] "matrix A"
+     [,1] [,2]
+[1,]    2    1
+[2,]    0    3
+[1] "matrix B"
+     [,1] [,2]
+[1,]    5    4
+[2,]    2   -1
+[1] "matrix additon"
+     [,1] [,2]
+[1,]    7    5
+[2,]    2    2
+[1] "matrix subtraction"
+     [,1] [,2]
+[1,]   -3   -3
+[2,]   -2    4
+[1] "scalar multiplication matrix"
+     [,1] [,2]
+[1,]    6    3
+[2,]    0    9
+[1] "matrix multiplication"
+> print(D)
+     [,1] [,2]
+[1,]   14    7
+[2,]    0   12
+> 
+--------------------------------------------------------------------------------------------------------------------------
+prog 9:
+A=matrix(c(1,2,3,4,5,6,7,8,9),nrow=3,ncol=3,byrow=TRUE)
+print(paste("Matrix A"))
+print(A)
+B=matrix(c(10,11,12),nrow=3,ncol=1)
+print(paste("matrix B"))
+print(B)
+c=cbind(A,B)
+print(C)
+additon=A+A
+print(paste("matrix addition"))
+print(addition)
+subtraction=A-A
+print(paste("matrix subtraction"))
+print(subtraction)
+a=3
+c=a*A
+print(paste("matrix multiplcation"))
+print(multiplication)
+transpose=t(A)
+print(paste("transpose of matrix A"))
+print(transpose)
+eigenvalue=eigen(A)
+print(paste("eigen value of A"))
+print(eigenvalue)
+determinant=det(A)
+print(paste("determinant of matrix A"))
+print(determinant)
+inverse=solve(A)
+print(paste("inverse of matrix A"))
+print(inverse)
+
+output:
+[1] "Matrix A"
+     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    4    5    6
+[3,]    7    8    9
+[1] "matrix B"
+     [,1]
+[1,]   10
+[2,]   11
+[3,]   12
+[1] "matrix addition"
+     [,1] [,2]
+[1,]    7    5
+[2,]    2    2
+[1] "matrix subtraction"
+     [,1] [,2] [,3]
+[1,]    0    0    0
+[2,]    0    0    0
+[3,]    0    0    0
+[1] "matrix multiplcation"
+     [,1] [,2]
+[1,]   10    6
+[2,]    0    3
+[1] "transpose of matrix A
+     [,1] [,2] [,3]
+[1,]    1    4    7
+[2,]    2    5    8
+[3,]    3    6    9
+[1] "eigen value of A"
+$values
+[1]  1.611684e+01 -1.116844e+00 -1.303678e-15
+
+$vectors
+           [,1]        [,2]       [,3]
+[1,] -0.2319707 -0.78583024  0.4082483
+[2,] -0.5253221 -0.08675134 -0.8164966
+[3,] -0.8186735  0.61232756  0.4082483
+[1] "determinant of matrix A"
+[1] 6.661338e-16
+Error in solve.default(A) : 
+  system is computationally singular: reciprocal condition number = 1.54198e-18
+
