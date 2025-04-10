@@ -7,6 +7,14 @@ print(paste("Hi",my.name,"next year you will be",my.age+1,"years old."))
 
 Output:
 [1] "Hi pradeep next year you will be 18 years old."
+-------------------------------------------------------------------------------------
+prog 2:
+string1<-"R program"
+result<-nchar(string1)
+cat("total Length:",result)
 
-
+output:
+total Length: 9
+--------------------------------------------------------------------------------------------
+prog 3:
 
