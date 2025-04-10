@@ -1,0 +1,89 @@
+prog 1:
+n=20
+p=0.1
+prob_all_good=dbinom(0,size=n,prob=p)
+cat("P(All are good bulbs)=",prob_all_good,"\n")
+prob_exact_3=dbinom(3,size=n,prob=p)
+cat("P(Exactly 3 defectives)=",prob_exact_3,"\n")
+prob_at_most_3=pbinom(3,size=n,prob=p)
+cat("P(At most 3 defective bulbs)=",prob_at_most_3,"\n")
+prob_at_least_3=pbinom(2,size=n,prob=p)
+cat("P(At least 3 defective)=",prob_at_least_3,"\n")
+
+output:
+
+P(All are good bulbs)= 0.1215767 
+P(Exactly 3 defectives)= 0.1901199 
+P(At most 3 defective bulbs)= 0.8670467 
+P(At least 3 defective)= 0.6769268 
+*****************************************************************************************************
+prog 2:
+lambda=4
+prob_5_calls=dpois(5,lambda)
+cat("P(Exactly 5 calls)=",prob_5_calls,"\n")
+prob_at_most_3=ppois(3,lambda)
+cat("p(At most_3 calls)=",prob_at_most_3,"\n")
+prob_at_least_2=1-ppois(1,lambda)
+cat("P(At least 2 calls)=",prob_at_least_2,"\n")
+set.seed(123)
+simulated_data=rpois(1000,lambda)
+hist(simulated_data,breaks=10,col="gold",main="poisson Distribution",xlab="number of calls per minute",ylab="frequency",border="black")
+
+output:
+
+P(Exactly 5 calls)= 0.1562935 
+p(At most_3 calls)= 0.4334701 
+P(At least 2 calls)= 0.9084218 
+*************************************************************************************************************************************
+prog 3:
+lambda=5
+lambda_per_minute=lambda/60
+prob_within_10=pexp(10,rate=lambda_per_minute)
+cat("P(next call within 10 minutes)=",prob_within_10,"\n")
+prob_after_15=1-pexp(15,rate=lambda_per_minute)
+cat("P(next call after 15 minute)=",prob_after_15,"\n")
+set.seed(123)
+random_samples=rexp(50,rate=lambda_per_minute)
+hist(random_samples,breaks=10,probability=TRUE,col="red",main="Exponential Distribution of inter-arrival Times",xlab="time between calls(minutes)")
+
+output:
+P(next call within 10 minutes)= 0.5654018 
+P(next call after 15 minute)= 0.2865048 
+**********************************************************************************************************************************************
+prog 4:
+a=0
+b=15
+prob_less_than_5=punif(5,min=a,max=b)
+cat("P(Waiting time<5 minutes)=",prob_less_than_5,"\n")
+prob_more_than_10=1-punif(10,min=a,max=b)
+cat("P(waiting time>10 minutes)=",prob_more_than_10,"\n")
+
+output:
+P(Waiting time<5 minutes)= 0.3333333 
+P(waiting time>10 minutes)= 0.3333333 
+****************************************************************************************************************************************
+prog 5:
+mu<-2040
+sigma<-60
+n<-2000
+prob_more_than_2150<-1-pnorm(2150,mean=mu,sd=sigma)
+bulbs_more_than_2150<-prob_more_than_2150*n
+cat("Number of bulbs burning more than 2150 hours=",round(bulbs_more_than_2150),"\n")
+prob_less_than_1950<-pnorm(1950,mean=mu,sd=sigma)
+bulbs_less_than_1950<-prob_less_than_1950*n
+cat("Number of bulbs burning less than 1950hours=",round(bulbs_less_than_1950),"\n")
+prob_between_1920_2160<-pnorm(2160,mean=mu,sd=sigma)-pnorm(1920,mean=mu,sd=sigma)
+bulbs_between_1920_2160<-prob_between_1920_2160*n
+cat("Number of bulbs burning between 1920 and 2160hours=",round(bulbs_between_1920_2160),"\n")
+
+Output:
+Number of bulbs burning more than 2150 hours= 67 
+Number of bulbs burning less than 1950hours= 134 
+Number of bulbs burning between 1920 and 2160hours= 1909 
+
+
+
+
+
+
+
