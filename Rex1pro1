@@ -1,3 +1,4 @@
+prog 1:
 my.name=readline("Enter name:")
 my.age<-readline("Enter age:")
 #convert character into integer
