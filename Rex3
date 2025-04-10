@@ -1,0 +1,147 @@
+prog 1:
+name=c('pradeep','pravin','tms','naveen','mohan','deepak','kavin','sedhu','kanisk','abu')
+score=c(6,88,4,12,15,16,24,20,30,22)
+attempts=c(1,3,2,2,3,1,1,2,1,3)
+quality=c('yes','no','yes','yes','no','no','yes','no','yes','no')
+print("original data frame:")
+df=data.frame(name,score,attempts,quality)
+print(df)
+output:
+'pradeep','pravin','tms','naveen','mohan','deepak','kavin','sedhu','kanisk','abu')
+> score=c(6,88,4,12,15,16,24,20,30,22)
+> attempts=c(1,3,2,2,3,1,1,2,1,3)
+> quality=c('yes','no','yes','yes','no','no','yes','no','yes','no')
+> print("original data frame:")
+[1] "original data frame:"
+> df=data.frame(name,score,attempts,quality)
+> print(df)
+      name score attempts quality
+1  pradeep     6        1     yes
+2   pravin    88        3      no
+3      tms     4        2     yes
+4   naveen    12        2     yes
+5    mohan    15        3      no
+6   deepak    16        1      no
+7    kavin    24        1     yes
+8    sedhu    20        2      no
+9   kanisk    30        1     yes
+10     abu    22        3      no
+>------------------------------------------------------------------------------------------------------------------------------------------
+prog 2:
+name=c('pradeep','pravin','tms','naveen','mohan','deepak','kavin','sedhu','kanisk','abu')
+score=c(6,88,4,12,15,16,24,20,30,22)
+attempts=c(1,3,2,2,3,1,1,2,1,3)
+quality=c('yes','no','yes','yes','no','no','yes','no','yes','no')
+print("original data frame:")
+df=data.frame(name,score,attempts,quality)
+print(df)
+extract=head(df,6)
+extract
+extract=tail(df,4)
+extract
+
+output:
+1] "original data frame:"
+      name score attempts quality
+1  pradeep     6        1     yes
+2   pravin    88        3      no
+3      tms     4        2     yes
+4   naveen    12        2     yes
+5    mohan    15        3      no
+6   deepak    16        1      no
+7    kavin    24        1     yes
+8    sedhu    20        2      no
+9   kanisk    30        1     yes
+10     abu    22        3      no
+     name score attempts quality
+1 pradeep     6        1     yes
+2  pravin    88        3      no
+3     tms     4        2     yes
+4  naveen    12        2     yes
+5   mohan    15        3      no
+6  deepak    16        1      no
+     name score attempts quality
+7   kavin    24        1     yes
+8   sedhu    20        2      no
+9  kanisk    30        1     yes
+10    abu    22        3      no
+> ----------------------------------------------------------------------------------------------------------------
+prog 3:
+name=c('pradeep','pravin','tms','naveen','mohan','deepak','kavin','sedhu','kanisk','abu')
+score=c(6,88,4,12,15,16,24,20,30,22)
+attempts=c(1,3,2,2,3,1,1,2,1,3)
+qualify=c('yes','no','yes','yes','no','no','yes','no','yes','no')
+print("original data frame:")
+df=data.frame(name,score,attempts,qualify)
+print(df)
+extract=df[,c("name")]
+extract
+extract=df[,c("name","qualify")]
+extract
+		
+output:
+[1] "original data frame:"
+      name score attempts qualify
+1  pradeep     6        1     yes
+2   pravin    88        3      no
+3      tms     4        2     yes
+4   naveen    12        2     yes
+5    mohan    15        3      no
+6   deepak    16        1      no
+7    kavin    24        1     yes
+8    sedhu    20        2      no
+9   kanisk    30        1     yes
+10     abu    22        3      no
+ [1] pradeep pravin  tms     naveen  mohan   deepak  kavin   sedhu   kanisk 
+[10] abu    
+Levels: abu deepak kanisk kavin mohan naveen pradeep pravin sedhu tms
+      name qualify
+1  pradeep     yes
+2   pravin      no
+3      tms     yes
+4   naveen     yes
+5    mohan      no
+6   deepak      no
+7    kavin     yes
+8    sedhu      no
+9   kanisk     yes
+10     abu      no
+> -----------------------------------------------------------------------------------------------------------------
+prog 4:
+name=c('pradeep','pravin','tms','naveen','mohan','deepak','kavin','sedhu','kanisk','abu')
+score=c(6,88,4,12,15,16,24,20,30,22)
+attempts=c(1,3,2,2,3,1,1,2,1,3)
+qualify=c('yes','no','yes','yes','no','no','yes','no','yes','no')
+print("original data frame:")
+df=data.frame(name,score,attempts,qualify)
+print(df)
+high_score=subset(df,score>20)
+print(high_score)	
+output:
+[1] "original data frame:"
+      name score attempts qualify
+1  pradeep     6        1     yes
+2   pravin    88        3      no
+3      tms     4        2     yes
+4   naveen    12        2     yes
+5    mohan    15        3      no
+6   deepak    16        1      no
+7    kavin    24        1     yes
+8    sedhu    20        2      no
+9   kanisk    30        1     yes
+10     abu    22        3      no
+     name score attempts qualify
+2  pravin    88        3      no
+7   kavin    24        1     yes
+9  kanisk    30        1     yes
+10    abu    22        3      no
+> ----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
