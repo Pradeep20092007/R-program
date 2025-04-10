@@ -1,0 +1,34 @@
+prog 1
+X1<-c(4,6,7,9,13,15)
+X2<-c(15,12,8,6,4,3)
+X3<-c(30,24,20,14,10,4)
+data<-data.frame(X1,X2,X3)
+model<-lm(X1~X2+X3,data=data)
+coefficients<-coef(model)
+intercept<-coefficients[1]
+slope1<-coefficients[2]
+slope2<-coefficients[3]
+regression_equation<-paste("X1=",round(intercept,2),"+",round(slope1,2),"*X2+",round(slope2,3),"*X3")
+print(regression_equation)
+
+Output:
+[1] "X1= 16.48 + 0.39 *X2+ -0.623 *X3"
+********************************************************************************************************
+prog 2:
+
+X1<-c(4,6,7,9,13,15)
+X2<-c(15,12,8,6,4,3)
+X3<-c(30,24,20,14,10,4)
+data<-data.frame(X1,X2,X3)
+model<-lm(X3~X1+X2,data=data)
+coefficients<-coef(model)
+intercept<-coefficients[1]
+slope1<-coefficients[2]
+slope2<-coefficients[3]
+regression_equation<-paste("X3=",round(intercept,2),"+",round(slope1,2),"*X1+",round(slope2,2),"*X2")
+print(regression_equation)
+
+Output:
+[1] "X3= 20.12 + -1.2 *X1+ 0.96 *X2"
+
+
