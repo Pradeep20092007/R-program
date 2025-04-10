@@ -1,9 +1,0 @@
-string1<-"R program"
-result<-nchar(string1)
-cat("total Length:",result)
-
-output:
-total Length: 9
-
-
-
