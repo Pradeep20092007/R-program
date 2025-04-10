@@ -136,12 +136,103 @@ output:
 9  kanisk    30        1     yes
 10    abu    22        3      no
 > ----------------------------------------------------------------------------------------------------------------------------------------------
+prog 5:
+name=c('pradeep','pravin','tms','naveen','mohan','deepak','kavin','sedhu','kanisk','abu')
+score=c(6,88,4,12,15,16,24,20,30,22)
+attempts=c(1,3,2,2,3,1,1,2,1,3)
+qualify=c('yes','no','yes','yes','no','no','yes','no','yes','no')
+print("original data frame:")
+df=data.frame(name,score,attempts,qualify)
+print(df)
+age=c(5,12,17,16,12,14,15,18,19,20)
+new_df=cbind(df,age)
+new_df
+student=data.frame(name="leo",score="17",attempts="5",qualify="yes",age="21")
+new_df1=rbind(new_df,student)
+new_df1
 
+output::
+[1] "original data frame:"
+      name score attempts qualify
+1  pradeep     6        1     yes
+2   pravin    88        3      no
+3      tms     4        2     yes
+4   naveen    12        2     yes
+5    mohan    15        3      no
+6   deepak    16        1      no
+7    kavin    24        1     yes
+8    sedhu    20        2      no
+9   kanisk    30        1     yes
+10     abu    22        3      no
+      name score attempts qualify age
+1  pradeep     6        1     yes   5
+2   pravin    88        3      no  12
+3      tms     4        2     yes  17
+4   naveen    12        2     yes  16
+5    mohan    15        3      no  12
+6   deepak    16        1      no  14
+7    kavin    24        1     yes  15
+8    sedhu    20        2      no  18
+9   kanisk    30        1     yes  19
+10     abu    22        3      no  20
+      name score attempts qualify age
+1  pradeep     6        1     yes   5
+2   pravin    88        3      no  12
+3      tms     4        2     yes  17
+4   naveen    12        2     yes  16
+5    mohan    15        3      no  12
+6   deepak    16        1      no  14
+7    kavin    24        1     yes  15
+8    sedhu    20        2      no  18
+9   kanisk    30        1     yes  19
+10     abu    22        3      no  20
+11     leo    17        5     yes  21
+------------------------------------------------------------------------------------------------------------
+prog 6:
+df1=data.frame(ID=c(1,2,3),Name=c("sachin","Leo","parthiban"))
+df2=data.frame(ID=c(1,2,3),Salary=c(50000,60000,70000))
+merged_df=merge(df1,df2,by="ID")
+print(merged_df)
 
-
-
-
-
-
-
+output:
+> print(merged_df)
+  ID      Name Salary
+1  1    sachin  50000
+2  2       Leo  60000
+3  3 parthiban  70000
+----------------------------------------------------------------------------------------------------------------------------------
+prog 7:
+data=read.csv(file.choose("dat.csv"))
+data
+extract=head(data,5)
+extract=tail(data,5)
+extract
+output:
+> data
+  S.no      Name Score attempts quality
+1    1 Anastasia  12.5        1     yes
+2    2      dima   9.0        3      no
+3    3 katherina  14.5        2     yes
+4    4     james  12.0        1     yes
+5    5     emily   9.0        2      no
+  S.no      Name Score attempts quality
+1    1 Anastasia  12.5        1     yes
+2    2      dima   9.0        3      no
+3    3 katherina  14.5        2     yes
+4    4     james  12.0        1     yes
+5    5     emily   9.0        2      no
+  S.no      Name Score attempts quality
+1    1 Anastasia  12.5        1     yes
+2    2      dima   9.0        3      no
+3    3 katherina  14.5        2     yes
+4    4     james  12.0        1     yes
+5    5     emily   9.0        2      no
+-------------------------------------------------------------------------------------------------------------
+prog 8:
+data=read.csv(file.choose("dat.csv"))
+data
+extract=data[,c("S.NO","NAME")]
+extract
+extract=data[,c("S.NO","NAME","ATTEMPTS")]
+extract
 
